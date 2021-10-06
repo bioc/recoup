@@ -58,7 +58,7 @@
     chromosome M.
 }
 \examples{
-    mm9.genes <- getAnnotation("mm9","gene")
+    mm9.genes <- getAnnotation("mm10","gene")
 }
 \author{
     Panagiotis Moulos
