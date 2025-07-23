@@ -15,7 +15,7 @@ Imports:
     biomaRt,
     Biostrings,
     circlize,
-    GenomeInfoDb,
+    Seqinfo,
     GenomicFeatures,
     graphics,
     grDevices,
@@ -32,6 +32,7 @@ Imports:
     txdbmaker,
     utils
 Suggests:
+    GenomeInfoDb,
     grid,
     BiocStyle,
     knitr,
@@ -61,8 +62,8 @@ biocViews: ImmunoOncology, Software, GeneExpression, Preprocessing,
 VignetteBuilder: knitr
 Authors@R: c(person(given="Panagiotis", family="Moulos",
     email="moulos@fleming.gr", role=c("aut", "cre")))
-Version: 1.37.0
-Date: 2023-03-14
+Version: 1.37.1
+Date: 2025-07-22
 Collate:
     'annotation.R'
     'argcheck.R'
