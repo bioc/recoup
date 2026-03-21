@@ -1635,24 +1635,23 @@ checkUcscToEnsembl <- function(org,ver) {
 
 ucscToEnsembl <- function() {
     return(list(
-        hg18=67,
-        hg19=74:75,
-        hg38=76:99,
-        mm9=67,
-        mm10=74:101,
-        rn5=74:79,
-        rn6=80:101,
-        dm3=c(67,74:78),
-        dm6=79:101,
-        danrer7=c(67,74:79),
-        danrer10=80:91,
-        danrer11=92:101,
-        pantro4=c(67,74:90),
-        pantro5=91:101,
-        #pantro6=,
-        susscr3=c(67,74:89),
-        susscr11=90:101,
-        equcab2=c(67,74:101)
+        hg18=54,
+        hg19=75,
+        hg38=110:115,
+        mm9=54,
+        mm10=102,
+        rn5=77,
+        rn6=110:115,
+        dm3=77,
+        dm6=110:115,
+        danrer7=77,
+        danrer10=80,
+        danrer11=110:115,
+        pantro4=80,
+        pantro5=110:115,
+        susscr3=80,
+        susscr11=110:115,
+        equcab3=110:115
     ))
 }
 

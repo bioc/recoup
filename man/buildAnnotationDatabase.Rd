@@ -83,11 +83,11 @@
 # Build a test database with one genome
 myDb <- file.path(tempdir(),"testann.sqlite")
 
-organisms <- list(mm10=96)
+organisms <- "mm10"
 sources <- "ensembl"
 
 # If the example is not running in a multicore system, rc is ignored
-buildAnnotationDatabase(organisms,sources,db=myDb,rc=0.5)
+#buildAnnotationDatabase(organisms,sources,db=myDb,rc=0.5)
 
 # A more complete case, don't run as example
 # Since we are using Ensembl, we can also ask for a version
