@@ -1635,24 +1635,24 @@ checkUcscToEnsembl <- function(org,ver) {
 
 ucscToEnsembl <- function() {
     return(list(
-        hg18=67,
-        hg19=74:75,
-        hg38=76:99,
-        mm9=67,
-        mm10=74:101,
-        rn5=74:79,
-        rn6=80:101,
-        dm3=c(67,74:78),
-        dm6=79:101,
-        danrer7=c(67,74:79),
-        danrer10=80:91,
-        danrer11=92:101,
-        pantro4=c(67,74:90),
-        pantro5=91:101,
-        #pantro6=,
-        susscr3=c(67,74:89),
-        susscr11=90:101,
-        equcab2=c(67,74:101)
+        hg18=54,
+        hg19=75,
+        hg38=110:115,
+        mm9=54,
+        mm10=102,
+        mm39=110:115,
+        rn5=77,
+        rn6=110:115,
+        dm3=77,
+        dm6=110:115,
+        danrer7=77,
+        danrer10=80,
+        danrer11=110:115,
+        pantro4=80,
+        pantro5=110:115,
+        susscr3=80,
+        susscr11=110:115,
+        equcab3=110:115
     ))
 }
 
@@ -1663,6 +1663,7 @@ getDataset <- function(org) {
         hg38 = { return("hsapiens_gene_ensembl") },
         mm9 = { return("mmusculus_gene_ensembl") },
         mm10 = { return("mmusculus_gene_ensembl") },
+        mm39 = { return("mmusculus_gene_ensembl") },
         rn5 = { return("rnorvegicus_gene_ensembl") },
         rn6 = { return("rnorvegicus_gene_ensembl") },
         dm3 = { return("dmelanogaster_gene_ensembl") },
@@ -1711,6 +1712,13 @@ getValidChrs <- function(org) {
             ))
         },
         mm10 = {
+            return(c(
+                "chr1","chr10","chr11","chr12","chr13","chr14","chr15","chr16",
+                "chr17","chr18","chr19","chr2","chr3","chr4","chr5","chr6",
+                "chr7","chr8","chr9","chrX","chrY"
+            ))
+        },
+        mm39 = {
             return(c(
                 "chr1","chr10","chr11","chr12","chr13","chr14","chr15","chr16",
                 "chr17","chr18","chr19","chr2","chr3","chr4","chr5","chr6",
@@ -1799,7 +1807,7 @@ getValidChrs <- function(org) {
                 "chr8","chr9","chrX","chrY"
             ))
         },
-        equcab2 = {
+        equcab3 = {
             return(c(
                 "chr1","chr10","chr11","chr12","chr13","chr14","chr15","chr16",
                 "chr17","chr18","chr19","chr2","chr20","chr21","chr22","chr23",
@@ -1846,6 +1854,13 @@ getValidChrsWithMit <- function(org) {
             ))
         },
         mm10 = {
+            return(c(
+                "chr1","chr10","chr11","chr12","chr13","chr14","chr15","chr16",
+                "chr17","chr18","chr19","chr2","chr3","chr4","chr5","chr6",
+                "chr7","chr8","chr9","chrX","chrY","chrM"
+            ))
+        },
+        mm39 = {
             return(c(
                 "chr1","chr10","chr11","chr12","chr13","chr14","chr15","chr16",
                 "chr17","chr18","chr19","chr2","chr3","chr4","chr5","chr6",
@@ -1939,7 +1954,7 @@ getValidChrsWithMit <- function(org) {
                 "chr8","chr9","chrX","chrY","chrM"
             ))
         },
-        equcab2 = {
+        equcab3 = {
             return(c(
                 "chr1","chr10","chr11","chr12","chr13","chr14","chr15","chr16",
                 "chr17","chr18","chr19","chr2","chr20","chr21","chr22","chr23",
@@ -2122,6 +2137,20 @@ getBiotypes <- function(org) {
                 "IG_V_pseudogene","TR_V_gene","TR_V_pseudogene",
                 "3prime_overlapping_ncrna"))
         },
+        mm39 = {
+            return(c("IG_C_gene","IG_C_pseudogene","IG_D_gene",
+                "IG_D_pseudogene","IG_J_gene","IG_LV_gene","IG_pseudogene",
+                "IG_V_gene","IG_V_pseudogene","lncRNA","miRNA","misc_RNA",
+                "Mt_rRNA","Mt_tRNA","processed_pseudogene","protein_coding",
+                "pseudogene","ribozyme","rRNA","scaRNA","scRNA","snoRNA",
+                "snRNA","sRNA","TEC","transcribed_processed_pseudogene",
+                "transcribed_unitary_pseudogene",
+                "transcribed_unprocessed_pseudogene",   
+                "translated_unprocessed_pseudogene",
+                "TR_C_gene","TR_D_gene","TR_J_gene","TR_J_pseudogene",
+                "TR_V_gene","TR_V_pseudogene","unitary_pseudogene",
+                "unprocessed_pseudogene"))
+        },
         dm3 = {
             return(c("protein_coding","ncRNA","snoRNA","pre_miRNA","pseudogene",
                 "snRNA","tRNA","rRNA"))
@@ -2180,7 +2209,7 @@ getBiotypes <- function(org) {
                 "misc_RNA","non_coding","IG_C_gene","IG_J_gene",
                 "IG_V_gene","IG_V_pseudogene"))
         },
-        equcab2 = {
+        equcab3 = {
             return(c("miRNA","misc_RNA","protein_coding","pseudogene","rRNA",
                 "processed_pseudogene","snoRNA","snRNA"))
         },
@@ -2196,7 +2225,7 @@ getSupportedRefDbs <- function() {
 }
 
 getSupportedOrganisms <- function() {
-    return(c("hg18","hg19","hg38","mm9","mm10","rn5","rn6","dm3","dm6",
+    return(c("hg18","hg19","hg38","mm9","mm10","mm39","rn5","rn6","dm3","dm6",
         "danrer7","danrer10","danrer11","pantro4","pantro5","susscr3",
         #"pantro6",
         "susscr11","equcab2","tair10"))
@@ -2968,10 +2997,4 @@ initDatabase <- function(db) {
         return(newv)
     }
     return(v)
-}
-
-buildAnnotationStore <- function(organisms,sources,
-    home=file.path(path.expand("~"),".recoup"),forceDownload=TRUE,rc=NULL) {
-    .Deprecated("buildAnnotationDatabase")
-    buildAnnotationDatabase(organisms,sources,forceDownload=forceDownload,rc=rc)
 }
