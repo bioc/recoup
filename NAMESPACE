@@ -74,7 +74,6 @@ importFrom("utils",read.delim)
 importFrom("utils",unzip)
 
 export(buildAnnotationDatabase)
-export(buildAnnotationStore)
 export(buildCustomAnnotation)
 export(calcCoverage)
 export(coverageRef)

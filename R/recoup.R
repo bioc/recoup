@@ -4,9 +4,9 @@ recoup <- function(
     region=c("genebody","tss","tes","utr3","custom"),
     type=c("chipseq","rnaseq"),
     signal=c("coverage","rpm"),
-    genome=c("hg18","hg19","hg38","mm9","mm10","rn5","rn6","dm3","dm6",
+    genome=c("hg18","hg19","hg38","mm9","mm10","mm39","rn5","rn6","dm3","dm6",
         "danrer7","danrer10","pantro4","pantro5","susscr3","susscr11",
-        "ecucab2","tair10"),
+        "ecucab3","tair10"),
     version="auto",
     refdb=c("ensembl","ucsc","refseq"),
     flank=c(2000,2000),
@@ -739,7 +739,7 @@ recoup <- function(
             #helperRanges <- helperRanges[keeph]
             #mainRanges <- mainRanges[names(helperRanges)]
             helperRanges <- .subsetGRangesByChrs(helperRanges,chrs)
-			mainRanges <- .subsetGRangesByChrs(mainRanges,chrs)
+            mainRanges <- .subsetGRangesByChrs(mainRanges,chrs)
         }
     }
     
