@@ -649,7 +649,7 @@
     The \code{version} argument controls what annotation
     version is used (when using local annotation after
     having built a store with 
-    \code{\link{buildAnnotationStore}} or when downloading
+    \code{\link{buildAnnotationDatabase}} or when downloading
     on the fly). When "auto", it will use the latest
     annotation version for the selected source. So, if
     \code{source="ensembl"}, it will use the latest 
