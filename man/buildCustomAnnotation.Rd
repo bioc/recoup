@@ -73,29 +73,29 @@
 }
 \examples{
 # Dummy database as example
-customDir <- file.path(tempdir(),"test_custom")
-dir.create(customDir)
+#customDir <- file.path(tempdir(),"test_custom")
+#dir.create(customDir)
 
-myDb <- file.path(customDir,"testann.sqlite")
-chromInfo <- data.frame(length=c(1000L,2000L,1500L),
-    row.names=c("A","B","C"))
+#myDb <- file.path(customDir,"testann.sqlite")
+#chromInfo <- data.frame(length=c(1000L,2000L,1500L),
+#    row.names=c("A","B","C"))
 
 # Build with the metadata list filled (you can also provide a version)
-buildCustomAnnotation(
-  gtfFile=file.path(system.file(package="recoup"),"dummy.gtf"),
-  metadata=list(
-    organism="dummy",
-    source="dummy_db",
-    version=1,
-    chromInfo=chromInfo
-  ),
-  db=myDb
-)
+#buildCustomAnnotation(
+#  gtfFile=file.path(system.file(package="recoup"),"dummy.gtf"),
+#  metadata=list(
+#    organism="dummy",
+#    source="dummy_db",
+#    version=1,
+#    chromInfo=chromInfo
+#  ),
+#  db=myDb
+#)
 
-# Try to retrieve some data
-myGenes <- loadAnnotation(genome="dummy",refdb="dummy_db",
-  type="gene",db=myDb)
-myGenes
+## Try to retrieve some data
+#myGenes <- loadAnnotation(genome="dummy",refdb="dummy_db",
+#  type="gene",db=myDb)
+#myGenes
 
 ## Real data!
 ## Setup a temporary directory to download files etc.

@@ -2362,8 +2362,10 @@ annotationFromCustomGtf <- function(parsed,type=c("gene","exon","utr"),
     
     gr$gc_content = rep(50,length(gr))
     ann <- as.data.frame(gr)
-    ann <- ann[,c(1,2,3,6,9,5,7,8)]
+    #ann <- ann[,c(1,2,3,6,9,5,7,8)]
     names(ann)[1] <- "chromosome"
+    ann <- ann[,c("chromosome","start","end","gene_id","gc_content","strand",
+        "gene_name","biotype")]
     ann$chromosome <- as.character(ann$chromosome)
     ann <- ann[order(ann$chromosome,ann$start),]
     
